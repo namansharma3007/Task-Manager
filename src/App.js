@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import './Style.css';
-
+import React, { useState, useEffect } from 'react';
+import {MdOutlineDeleteForever} from 'react-icons/md'
+import {BsCheckLg} from 'react-icons/bs'
 
 function TaskForm({ addTask }) {
   const [task, setTask] = useState('');
@@ -37,9 +38,9 @@ function TaskItem({ task, toggleTask, deleteTask }) {
       >
         {task.title}
       </span>
-      <button onClick={() => deleteTask(task.id)} className='delete-btn'>Delete</button>
+      <button onClick={() => deleteTask(task.id)} className='delete-btn'><MdOutlineDeleteForever/></button>
       {!task.completed && (
-        <button onClick={() => toggleTask(task.id)} className='complete-btn'>Complete</button>
+        <button onClick={() => toggleTask(task.id)} className='complete-btn'><BsCheckLg/></button>
       )}
     </li>
   );
