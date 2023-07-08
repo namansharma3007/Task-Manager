@@ -121,6 +121,10 @@ label {
   margin-right: 10px;
   font-weight: bold;
   color: #333;
+  cursor: pointer;
+}
+input[type="radio"]{
+  cursor: pointer;
 }
 
 input[type="radio"] + label {
