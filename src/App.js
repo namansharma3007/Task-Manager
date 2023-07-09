@@ -1,7 +1,7 @@
 import './Style.css';
 import React, { useState, useEffect } from 'react';
-import {MdOutlineDeleteForever} from 'react-icons/md'
-import {BsCheckLg} from 'react-icons/bs'
+import { MdOutlineDeleteForever } from 'react-icons/md'
+import { BsCheckLg } from 'react-icons/bs'
 
 function TaskForm({ addTask }) {
   const [task, setTask] = useState('');
@@ -38,9 +38,9 @@ function TaskItem({ task, toggleTask, deleteTask }) {
       >
         {task.title}
       </span>
-      <button onClick={() => deleteTask(task.id)} className='delete-btn'><MdOutlineDeleteForever/></button>
+      <button onClick={() => deleteTask(task.id)} className='delete-btn'><MdOutlineDeleteForever /></button>
       {!task.completed && (
-        <button onClick={() => toggleTask(task.id)} className='complete-btn'><BsCheckLg/></button>
+        <button onClick={() => toggleTask(task.id)} className='complete-btn'><BsCheckLg /></button>
       )}
     </li>
   );
@@ -69,9 +69,9 @@ function FilterOptions({ filter, setFilter, tasks }) {
   // Calculate the count based on the filtered tasks
   const totalTasks = tasks.length < 10 ? `0${tasks.length}` : tasks.length;
   const completedTotal = tasks.filter((task) => task.completed).length;
-  const completed = completedTotal < 10 ? `0${completedTotal}` : completedTotal; 
+  const completed = completedTotal < 10 ? `0${completedTotal}` : completedTotal;
   const incompleted = (+totalTasks - +completed) < 10 ? `0${+totalTasks - +completed}` : +totalTasks - +completed;
-  
+
   return (
     <div className='filterSection'>
       <label>
@@ -149,7 +149,7 @@ function App() {
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   };
-  
+
 
   const filteredTasks = tasks.filter((task) => {
     if (filter === 'completed') {
@@ -165,13 +165,14 @@ function App() {
     <div className="App">
       <h1>Task Manager</h1>
       <TaskForm addTask={addTask} />
-      <FilterOptions filter={filter} setFilter={setFilter} tasks={tasks}/>
+      <FilterOptions filter={filter} setFilter={setFilter} tasks={tasks} />
       <TaskList
         tasks={filteredTasks}
         toggleTask={toggleTask}
         deleteTask={deleteTask}
       />
-      <footer className='copyrightline'>Copyright &#169; Naman Sharma</footer>
+      <footer className='copyrightline'>Copyright &#169; Naman Sharma <a href='https://www.linkedin.com/in/naman-sharma-b46950226/' target='_blank'>About Me</a>
+      </footer>
     </div>
   );
 }
