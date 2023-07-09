@@ -71,6 +71,7 @@ function FilterOptions({ filter, setFilter, tasks }) {
   const completedTotal = tasks.filter((task) => task.completed).length;
   const completed = completedTotal < 10 ? `0${completedTotal}` : completedTotal; 
   const incompleted = (+totalTasks - +completed) < 10 ? `0${+totalTasks - +completed}` : +totalTasks - +completed;
+  
   return (
     <div>
       <label>
