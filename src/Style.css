@@ -1,3 +1,7 @@
+/* Background Color */
+body {
+  background-color: #f8f8f8;
+}
 /* App */
 .App {
   max-width: 100%;
@@ -125,32 +129,4 @@ label {
 }
 input[type="radio"]{
   cursor: pointer;
-}
-
-input[type="radio"] + label {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-  color: #333;
-}
-
-input[type="radio"] + label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid #007bff;
-  background-color: #fff;
-}
-
-input[type="radio"]:checked + label:before {
-  background-color: #007bff;
-}
-
-/* Background Color */
-body {
-  background-color: #f8f8f8;
 }
