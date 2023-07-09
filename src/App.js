@@ -79,7 +79,7 @@ function FilterOptions({ filter, setFilter, tasks }) {
           checked={filter === 'all'}
           onChange={handleFilterChange}
         />
-        All [{count}]
+        All[{count}]
       </label>
       <label>
         <input
@@ -89,7 +89,7 @@ function FilterOptions({ filter, setFilter, tasks }) {
           checked={filter === 'completed'}
           onChange={handleFilterChange}
         />
-        Completed [{tasks.filter((task) => task.completed).length}]
+        Completed[{tasks.filter((task) => task.completed).length}]
       </label>
       <label>
         <input
@@ -99,7 +99,7 @@ function FilterOptions({ filter, setFilter, tasks }) {
           checked={filter === 'incomplete'}
           onChange={handleFilterChange}
         />
-        Incomplete [{tasks.filter((task) => !task.completed).length}]
+        Incomplete[{tasks.filter((task) => !task.completed).length}]
       </label>
     </div>
   );
