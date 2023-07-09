@@ -67,8 +67,10 @@ function FilterOptions({ filter, setFilter, tasks }) {
   };
 
   // Calculate the count based on the filtered tasks
-  const count = tasks.length;
-
+  const totalTasks = tasks.length < 10 ? `0${tasks.length}` : tasks.length;
+  const completedTotal = tasks.filter((task) => task.completed).length;
+  const completed = completedTotal < 10 ? `0${completedTotal}` : completedTotal; 
+  const incompleted = (+totalTasks - +completed) < 10 ? `0${+totalTasks - +completed}` : +totalTasks - +completed;
   return (
     <div>
       <label>
@@ -79,7 +81,7 @@ function FilterOptions({ filter, setFilter, tasks }) {
           checked={filter === 'all'}
           onChange={handleFilterChange}
         />
-        All[{count}]
+        All[{totalTasks}]
       </label>
       <label>
         <input
@@ -89,7 +91,7 @@ function FilterOptions({ filter, setFilter, tasks }) {
           checked={filter === 'completed'}
           onChange={handleFilterChange}
         />
-        Completed[{tasks.filter((task) => task.completed).length}]
+        Completed[{completed}]
       </label>
       <label>
         <input
@@ -99,7 +101,7 @@ function FilterOptions({ filter, setFilter, tasks }) {
           checked={filter === 'incomplete'}
           onChange={handleFilterChange}
         />
-        Incomplete[{tasks.filter((task) => !task.completed).length}]
+        Incomplete[{incompleted}]
       </label>
     </div>
   );
