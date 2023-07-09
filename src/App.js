@@ -171,7 +171,7 @@ function App() {
         toggleTask={toggleTask}
         deleteTask={deleteTask}
       />
-      <footer className='copyrightline'>Copyright &#169; Naman Sharma <a href='https://www.linkedin.com/in/naman-sharma-b46950226/' target='_blank'>About Me</a>
+      <footer className='copyrightline'>Copyright &#169; Naman Sharma <a href='https://www.linkedin.com/in/naman-sharma-b46950226/' target='_blank' rel="noopener noreferrer">About Me</a>
       </footer>
     </div>
   );
