@@ -61,10 +61,13 @@ function TaskList({ tasks, toggleTask, deleteTask }) {
   );
 }
 
-function FilterOptions({ filter, setFilter }) {
+function FilterOptions({ filter, setFilter, tasks }) {
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
+
+  // Calculate the count based on the filtered tasks
+  const count = tasks.length;
 
   return (
     <div>
@@ -76,7 +79,7 @@ function FilterOptions({ filter, setFilter }) {
           checked={filter === 'all'}
           onChange={handleFilterChange}
         />
-        All
+        All [{count}]
       </label>
       <label>
         <input
@@ -86,7 +89,7 @@ function FilterOptions({ filter, setFilter }) {
           checked={filter === 'completed'}
           onChange={handleFilterChange}
         />
-        Completed
+        Completed [{tasks.filter((task) => task.completed).length}]
       </label>
       <label>
         <input
@@ -96,7 +99,7 @@ function FilterOptions({ filter, setFilter }) {
           checked={filter === 'incomplete'}
           onChange={handleFilterChange}
         />
-        Incomplete
+        Incomplete [{tasks.filter((task) => !task.completed).length}]
       </label>
     </div>
   );
@@ -159,7 +162,7 @@ function App() {
     <div className="App">
       <h1>Task Manager</h1>
       <TaskForm addTask={addTask} />
-      <FilterOptions filter={filter} setFilter={setFilter} />
+      <FilterOptions filter={filter} setFilter={setFilter} tasks={tasks}/>
       <TaskList
         tasks={filteredTasks}
         toggleTask={toggleTask}
