@@ -171,7 +171,7 @@ function App() {
         toggleTask={toggleTask}
         deleteTask={deleteTask}
       />
-      <footer className='copyrightline'>&#169; Naman Sharma</footer>
+      <footer className='copyrightline'>Copyright &#169; Naman Sharma</footer>
     </div>
   );
 }
