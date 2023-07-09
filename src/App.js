@@ -73,7 +73,7 @@ function FilterOptions({ filter, setFilter, tasks }) {
   const incompleted = (+totalTasks - +completed) < 10 ? `0${+totalTasks - +completed}` : +totalTasks - +completed;
   
   return (
-    <div>
+    <div className='filterSection'>
       <label>
         <input
           type="radio"
@@ -171,6 +171,7 @@ function App() {
         toggleTask={toggleTask}
         deleteTask={deleteTask}
       />
+      <footer className='copyrightline'>&#169; Naman Sharma</footer>
     </div>
   );
 }
