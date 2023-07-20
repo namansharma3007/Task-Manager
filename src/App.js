@@ -74,35 +74,38 @@ function FilterOptions({ filter, setFilter, tasks }) {
 
   return (
     <div className='filterSection'>
-      <label>
         <input
           type="radio"
           name="filter"
           value="all"
           checked={filter === 'all'}
           onChange={handleFilterChange}
+          id="all"
         />
-        All[{totalTasks}]
+      <label for="all">
+        All-{totalTasks}
       </label>
-      <label>
         <input
           type="radio"
           name="filter"
           value="completed"
           checked={filter === 'completed'}
           onChange={handleFilterChange}
+          id="completed"
         />
-        Completed[{completed}]
+      <label for="completed">
+        Completed-{completed}
       </label>
-      <label>
         <input
           type="radio"
           name="filter"
           value="incomplete"
           checked={filter === 'incomplete'}
           onChange={handleFilterChange}
+          id="incomplete"
         />
-        Incomplete[{incompleted}]
+      <label for="incomplete">
+        Incomplete-{incompleted}
       </label>
     </div>
   );
