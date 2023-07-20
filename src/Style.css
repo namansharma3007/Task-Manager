@@ -35,6 +35,17 @@ h1 {
   color: #333;
 }
 
+/* No task notice */
+.no-task-notice{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* TaskForm */
 form {
   display: flex;

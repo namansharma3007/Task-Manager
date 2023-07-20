@@ -169,11 +169,15 @@ function App() {
       <h1>Task Manager</h1>
       <TaskForm addTask={addTask} />
       <FilterOptions filter={filter} setFilter={setFilter} tasks={tasks} />
-      <TaskList
-        tasks={filteredTasks}
-        toggleTask={toggleTask}
-        deleteTask={deleteTask}
-      />
+      {
+        tasks.length > 0 ? 
+        <TaskList
+          tasks={filteredTasks}
+          toggleTask={toggleTask}
+          deleteTask={deleteTask}
+        /> :
+        <span className='no-task-notice'>Your task manager is empty.</span>
+      }
       <footer className='copyrightline'>Copyright &#169; Naman Sharma <a href='https://www.linkedin.com/in/naman-sharma-b46950226/' target='_blank' rel="noopener noreferrer">About Me</a>
       </footer>
     </div>
