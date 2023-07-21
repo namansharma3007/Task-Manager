@@ -23,6 +23,7 @@ function TaskForm({ addTask }) {
         placeholder="Enter task"
         value={task}
         onChange={(e) => setTask(e.target.value)}
+        className='input-task-text'
       />
       <button type="submit">Add Task</button>
     </form>
@@ -64,15 +65,20 @@ function TaskItem({ task, toggleTask, deleteTask, editTask }) {
           type="text"
           value={editedTitle}
           onChange={(e) => setEditedTitle(e.target.value)}
+          className='edit-text-input'
         />
       )}
       <button onClick={() => deleteTask(task.id)} className='delete-btn'>
         <MdOutlineDeleteForever />
       </button>
       {editMode ? (
-        <button onClick={handleEditSave} className='edit-btn'><BsCheckLg/></button>
+        <button onClick={handleEditSave} className='edit-btn' style={{
+          display: task.completed ? "none" : "flex"
+        }}><BsCheckLg /></button>
       ) : (
-        <button onClick={handleEdit} className='edit-btn'><BiSolidPencil/></button>
+        <button onClick={handleEdit} className='edit-btn' style={{
+          display: task.completed ? "none" : "flex"
+        }}><BiSolidPencil /></button>
       )}
     </li>
   );

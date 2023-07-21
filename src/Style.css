@@ -61,10 +61,18 @@ form {
   gap: 5px;
 }
 
-input[type="text"] {
+.input-task-text {
   flex: 1;
   padding: 10px;
   font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-text-input{
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
