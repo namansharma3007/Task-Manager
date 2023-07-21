@@ -5,7 +5,6 @@
 
 /* Background Color */
 body {
-  background-color: #f8f8f8;
   background-image: url('../public/cornered-stairs.svg');
   background-repeat: no-repeat;
   background-attachment: fixed;
