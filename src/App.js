@@ -66,6 +66,7 @@ function TaskItem({ task, toggleTask, deleteTask, editTask }) {
           value={editedTitle}
           onChange={(e) => setEditedTitle(e.target.value)}
           className='edit-text-input'
+          placeholder='Update task'
         />
       )}
       <button onClick={() => deleteTask(task.id)} className='delete-btn'>
