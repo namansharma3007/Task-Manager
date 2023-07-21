@@ -55,6 +55,7 @@ function TaskItem({ task, toggleTask, deleteTask, editTask }) {
         <span
           style={{
             textDecoration: task.completed ? 'line-through' : 'none',
+            color: task.completed ? "#0000003b" : "black",
           }}
           onClick={() => toggleTask(task.id)}
         >
