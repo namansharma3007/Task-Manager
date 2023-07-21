@@ -181,7 +181,6 @@ li span {
 .filterSection input[type="radio"]:checked + label {
   background-color: #127ef3;
   color: #fff;
-  /* font-weight: bold; */
 }
 
 /* Optional hover effect */
