@@ -1,6 +1,6 @@
 # Task Manager
 ## Description
-This repository contains the source code for a Task Manager application. The Task Manager allows users to manage their tasks effectively and efficiently. It provides features such as adding tasks, editing tasks, and deleting tasks.
+This repository contains the source code for a Task Manager application. The Task Manager allows users to manage their tasks effectively and efficiently. It provides features such as adding tasks, editing tasks, and deleting tasks. Additionally, it offers the ability to mark tasks as completed using checkboxes.
 
 ## Getting Started
 To use the Task Manager, follow the steps below:
@@ -16,7 +16,7 @@ Follow the steps below to use the Task Manager to its fullest potential:
 2. Access the settings menu by clicking on the settings icon.
 3. Add a link to the home screen of your device to create an icon for quick access to the Task Manager.
 4. Now you can use the Task Manager for your personal task management needs.
-5. The Task Manager utilizes local storage to store your data, ensuring that your tasks are never erased. Feel free to add, edit, or delete tasks as needed.
+5. The Task Manager utilizes local storage to store your data, ensuring that your tasks are never erased. Feel free to add, 6. edit, or delete tasks as needed. Tasks can be marked as completed using the checkboxes provided.
 ## Contributing
 If you would like to contribute to the development of the Task Manager, please follow these guidelines:
 
