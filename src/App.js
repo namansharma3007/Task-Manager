@@ -155,19 +155,20 @@ function FilterOptions({ filter, setFilter, tasks }) {
 function App() {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState('all');
+  const [tab, setTab] = useState('dailyGoals'); // new state for tab
 
   // Load tasks from local storage on component mount
   useEffect(() => {
-    const storedTasks = localStorage.getItem('tasks');
+    const storedTasks = localStorage.getItem(tab);
     if (storedTasks) {
       setTasks(JSON.parse(storedTasks));
     }
-  }, []);
+  }, [tab]);
 
   // Save tasks to local storage whenever tasks state changes
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
+    localStorage.setItem(tab, JSON.stringify(tasks));
+  }, [tasks, tab]);
 
   const addTask = (title) => {
     const newTask = {
@@ -191,7 +192,7 @@ function App() {
   const deleteTask = (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     setTasks(updatedTasks);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+    localStorage.setItem(tab, JSON.stringify(updatedTasks));
   };
 
   const editTask = (id, newTitle) => {
@@ -219,6 +220,20 @@ function App() {
       <h1>Task Manager <GiNetworkBars /></h1>
       <TaskForm addTask={addTask} />
       <FilterOptions filter={filter} setFilter={setFilter} tasks={tasks} />
+      <div className="tabs">
+        <button
+          className={`tab-button ${tab === 'dailyGoals' ? 'active' : ''}`}
+          onClick={() => setTab('dailyGoals')}
+        >
+          Daily Goals
+        </button>
+        <button
+          className={`tab-button ${tab === 'longTermGoals' ? 'active' : ''}`}
+          onClick={() => setTab('longTermGoals')}
+        >
+          Long Term Goals
+        </button>
+      </div>
       {
         tasks.length > 0 ?
           <TaskList
@@ -227,7 +242,7 @@ function App() {
             deleteTask={deleteTask}
             editTask={editTask}
           /> :
-          <span className='no-task-notice'>Your task manager is empty.</span>
+          <span className='no-task-notice'>{`Your ${tab === 'dailyGoals' ? 'daily' : 'long term'} goals are empty.`}</span>
       }
       <footer className='copyrightline'>
         Copyright &#169; Naman Sharma <a href='https://www.linkedin.com/in/naman-sharma-b46950226/' target='_blank' rel="noopener noreferrer">About Me</a>
@@ -235,5 +250,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
