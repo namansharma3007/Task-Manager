@@ -218,10 +218,9 @@ li span {
   padding: 4px 10px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-size: 16px;
   border-radius: 8px 8px 0 0;
   transition: all 0.2s ease;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .tab-button.active {
