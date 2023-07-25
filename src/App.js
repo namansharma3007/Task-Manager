@@ -215,8 +215,30 @@ function App() {
     return true;
   });
 
+  // Get today's date and day of the week
+  const today = new Date();
+  const dateNumber = today.getDate();
+  const dayOfWeekNumber = today.getDay();
+  const monthIndex = today.getMonth()
+
+  // Array to map day of the week number to its corresponding word
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  const monthsName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  // Function to get the day of the week in word
+  const getDayOfWeekWord = (dayIndex) => {
+    return daysOfWeek[dayIndex] || '';
+  };
+
+  // Function to get the month in word
+  const getMonth = (monthIndex) =>{
+    return monthsName[monthIndex] || '';
+  };
+
   return (
     <div className="App">
+      <p className='date'>{`${getDayOfWeekWord(dayOfWeekNumber)}, ${getMonth(monthIndex)} ${dateNumber}`}</p>
       <h1>Task Manager <GiNetworkBars /></h1>
       <TaskForm addTask={addTask} />
       <FilterOptions filter={filter} setFilter={setFilter} tasks={tasks} />
