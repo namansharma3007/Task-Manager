@@ -45,7 +45,11 @@ function TaskItem({ task, toggleTask, deleteTask, editTask }) {
   };
 
   return (
-    <li>
+    <li
+    style={{
+      backgroundColor: task.completed ? "#888888" : "white"
+    }} 
+    >
       <input
         type="checkbox"
         checked={task.completed}
@@ -55,7 +59,7 @@ function TaskItem({ task, toggleTask, deleteTask, editTask }) {
         <span
           style={{
             textDecoration: task.completed ? 'line-through' : 'none',
-            color: task.completed ? "#0000003b" : "black",
+            color: task.completed ? "#fff" : "black",
           }}
           onClick={() => toggleTask(task.id)}
         >
