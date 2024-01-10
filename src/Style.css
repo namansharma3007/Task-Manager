@@ -3,6 +3,16 @@
   font-family: Arial, sans-serif;
 }
 
+:root{
+  --button-blue: #127EF3;
+  --button-blue-hover: #1775da;
+  --button-red: #dc3545;
+  --button-red-hover: #a30818;
+  --button-green: #2acf27;
+  --button-green-hover: #1f961d;
+}
+
+
 /* Background Color */
 body {
   background-image: url('../public/cornered-stairs.svg');
@@ -77,7 +87,7 @@ form {
 }
 
 button[type="submit"] {
-  background-color: #127EF3;
+  background-color: var(--button-blue);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -86,7 +96,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #1775da;
+  background-color: var(--button-blue-hover);
 }
 
 /* TaskList */
@@ -118,7 +128,7 @@ li span {
 }
 
 .delete-btn {
-  background-color: #dc3545;
+  background-color: var(--button-red);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,10 +142,10 @@ li span {
 }
 
 .delete-btn:hover {
-  background-color: #a30818;
+  background-color: var(--button-red-hover);
 }
 .edit-btn {
-  background-color: #2acf27;
+  background-color: var(--button-green);
   color: #fff;
   display: flex;
   align-items: center;
@@ -148,7 +158,7 @@ li span {
   margin: 0px 5px;
 }
 .edit-btn:hover {
-  background-color: #1f961d;
+  background-color: var(--button-green-hover);
 }
 
 /* FilterOptions */
@@ -182,7 +192,7 @@ li span {
 
 /* Style the selected label differently */
 .filterSection input[type="radio"]:checked + label {
-  background-color: #127ef3;
+  background-color: var(--button-blue);
   color: #fff;
 }
 
