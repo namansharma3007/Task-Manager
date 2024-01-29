@@ -1,4 +1,3 @@
-import './Style.css';
 import React, { useState, useEffect } from 'react';
 import { MdOutlineDeleteForever } from 'react-icons/md';
 import { BsCheckLg } from 'react-icons/bs'
