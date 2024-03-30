@@ -253,16 +253,6 @@ function App() {
       ) : (
         <span className='no-task-notice'>Your goals are empty.</span>
       )}
-      <footer className='copyrightline'>
-        Copyright &#169; Naman Sharma{' '}
-        <a
-          href='https://www.linkedin.com/in/naman-sharma-b46950226/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          About Me
-        </a>
-      </footer>
     </div>
   );
 }

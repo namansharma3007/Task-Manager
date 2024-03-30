@@ -200,11 +200,3 @@ li span {
 .filterSection label:hover {
   background-color: #ddd;
 }
-
-/* Copyright */
-.copyrightline{
-  font-size: 10px;
-  flex: 0 0 auto;
-  text-align: center;
-  margin-bottom: 10px;
-}
